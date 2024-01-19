@@ -14,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/', function () {
     $dati = config("data");
-    return view('home', $dati);
+    return view('home', ['fumetti' => $dati]);
 })->name("fumetti");
+
+// Route::get('/', function () {
+//     $menu = config("data.menu");
+//     return view('home', compact('menu'));
+// })->name("home");
